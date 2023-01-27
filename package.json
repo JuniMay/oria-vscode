@@ -1,0 +1,25 @@
+{
+  "name": "oria-vscode",
+  "displayName": "oria-vscode",
+  "description": "VSCode language support for the Oria programming language.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "oria",
+      "aliases": ["oria", "oria"],
+      "extensions": [".oria"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "oria",
+      "scopeName": "source.oria",
+      "path": "./syntaxes/oria.tmLanguage.json"
+    }]
+  }
+}

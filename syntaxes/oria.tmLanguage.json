@@ -1,0 +1,175 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "oria",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#identifiers"
+    }
+  ],
+  "repository": {
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.hexadecimal.oria",
+          "match": "\\b0[xX][_0-9a-fA-F]+([iuf][0-9]+)?\\b"
+        },
+        {
+          "name": "constant.numeric.binary.oria",
+          "match": "\\b0[bB][_01]+([iuf][0-9]+)?\\b"
+        },
+        {
+          "name": "constant.numeric.octal.oria",
+          "match": "\\b0[oO][_0-7]+([iuf][0-9]+)?\\b"
+        },
+        {
+          "name": "constant.numeric.float.oria",
+          "match": "\\b([_0-9]*)\\.[0-9_]*(e[+-][0-9]+)?([iuf][0-9]+)?"
+        },
+        {
+          "name": "constant.numeric.integer.oria",
+          "match": "\\b[_0-9]+([iuf][0-9]+)?\\b"
+        }
+      ]
+    },
+    "identifiers": {
+      "patterns": [
+				{
+					"match": "(module)\\s*([_a-zA-Z][_a-zA-Z0-9]*)",
+					"captures": {
+						"1": {
+							"name": "storage.type.module.oria"
+						},
+						"2": {
+							"name": "entity.name.type.module.oria"
+						}
+					}
+				},
+        {
+          "name": "constant.other.variable.oria",
+          "match": "\\b[_A-Z][_A-Z0-9]+\\b"
+        },
+        {
+          "match": "(@[_a-zA-Z][_a-zA-Z0-9]*)(\\(|\\[)",
+          "captures": {
+            "1": {
+              "name": "support.function.oria"
+            }
+          }
+        },
+        {
+          "name": "support.type.oria",
+          "match": "(@[A-Z][_a-zA-Z0-9]*)"
+        },
+        {
+          "name": "support.variable.oria",
+          "match": "@[_a-zA-Z][_a-zA-Z0-9]*"
+        },
+        {
+          "name": "variable.language.oria",
+          "match": "(Type|Unit|Self|self|super)"
+        },
+        {
+          "match": "([_a-zA-Z][_a-zA-Z0-9]*)(\\(|\\[)",
+          "captures": {
+            "1": {
+              "name": "entity.name.function.oria"
+            }
+          }
+        },
+        {
+          "name": "string.other.label.oria",
+          "match": "'[_a-zA-Z][_a-zA-Z0-9]*"
+        },
+        {
+          "name": "entity.name.type.oria",
+          "match": "[A-Z][_a-zA-Z0-9]*"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.general.oria",
+          "match": "\\b(if|else|while|for|loop|return|break|continue)\\b"
+        },
+        {
+          "name": "keyword.control.import.oria",
+          "match": "\\b(import|use)\\b"
+        },
+        {
+          "name": "storage.type.module.oria",
+          "match": "\\b(module)\\b"
+        },
+        {
+          "name": "storage.type.def.oria",
+          "match": "\\b(def)\\b"
+        },
+        {
+          "name": "storage.type.const.oria",
+          "match": "\\b(const)\\b"
+        },
+        {
+          "name": "storage.type.type.oria",
+          "match": "\\b(type)\\b"
+        },
+        {
+          "name": "storage.type.type_body.oria",
+          "match": "\\b(record|interface)\\b"
+        },
+        {
+          "name": "storage.type.let.oria",
+          "match": "\\b(let)\\b"
+        },
+        {
+          "name": "storage.modifier.oria",
+          "match": "\\b(mut|builtin|extern)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.oria",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.oria",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "operators": {
+      "name": "keyword.operator.oria",
+      "match": "[~!%^&*\\-=+\\|:<.>/]+"
+    },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.oria",
+          "begin": "#",
+          "end": "\\n"
+        },
+        {
+          "name": "comment.block.oria",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.oria"
+}
