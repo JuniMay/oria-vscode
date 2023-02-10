@@ -105,7 +105,7 @@
       "patterns": [
         {
           "name": "keyword.control.general.oria",
-          "match": "\\b(if|else|while|for|loop|return|break|continue)\\b"
+          "match": "\\b(if|else|while|for|loop|return|break|continue|match)\\b"
         },
         {
           "name": "keyword.control.import.oria",
@@ -114,6 +114,10 @@
         {
           "name": "storage.type.module.oria",
           "match": "\\b(module)\\b"
+        },
+        {
+          "name": "storage.type.impl.oria",
+          "match": "\\b(impl)\\b"
         },
         {
           "name": "storage.type.def.oria",
@@ -129,7 +133,7 @@
         },
         {
           "name": "storage.type.type_body.oria",
-          "match": "\\b(record|interface)\\b"
+          "match": "\\b(struct|interface)\\b"
         },
         {
           "name": "storage.type.let.oria",
@@ -137,7 +141,7 @@
         },
         {
           "name": "storage.modifier.oria",
-          "match": "\\b(mut|builtin|extern)\\b"
+          "match": "\\b(mut|builtin|extern|implicit)\\b"
         }
       ]
     },
@@ -154,7 +158,7 @@
     },
     "operators": {
       "name": "keyword.operator.oria",
-      "match": "[~!%^&*\\-=+\\|:<.>/]+"
+      "match": "[~!%^&*\\-=+\\|:<.>/\\\\]+"
     },
     "comments": {
       "patterns": [
